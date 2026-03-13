@@ -1,0 +1,80 @@
+/* 全局样式重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* 黑白配色方案 */
+  --primary-color: #000000;
+  --secondary-color: #ffffff;
+  --text-color: #000000;
+  --text-light: #333333;
+  --bg-color: #ffffff;
+  --card-bg: #ffffff;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  /* 字体设置 */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+
+  /* 颜色模式 */
+  color: var(--text-color);
+  background-color: var(--bg-color);
+
+  /* 渲染优化 */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 深色模式 */
+.dark-mode {
+  --primary-color: #ffffff;
+  --secondary-color: #1e1e1e;
+  --text-color: #ffffff;
+  --text-light: #cccccc;
+  --bg-color: #121212;
+  --card-bg: #1e1e1e;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* 通用样式 */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+p {
+  color: var(--text-light);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+}
