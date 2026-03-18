@@ -22,13 +22,13 @@ isDarkMode.value = false;
   <div class="app" :class="{ 'dark-mode': isDarkMode }">
     <header class="app-header">
       <div class="header-top">
-        <h1>生活记录</h1>
+        <h1>雪❤窝</h1>
         <button class="theme-toggle" @click="toggleTheme" aria-label="切换主题">
           <span v-if="!isDarkMode">🌙</span>
           <span v-else>☀️</span>
         </button>
       </div>
-      <p>记录生活中的美好瞬间</p>
+      <p>记录我们的美好时光</p>
       <nav class="app-nav">
         <button
           :class="['nav-btn', { active: activeTab === 'timeline' }]"
@@ -49,7 +49,7 @@ isDarkMode.value = false;
       <PhotoWall v-if="activeTab === 'photo'" />
     </main>
     <footer class="app-footer">
-      <p>© 2026 生活记录</p>
+      <p>© 2026 雪❤窝</p>
     </footer>
   </div>
 </template>
@@ -59,26 +59,26 @@ isDarkMode.value = false;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
-  color: #000000;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .app.dark-mode {
-  background-color: #121212;
-  color: #ffffff;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .app-header {
-  background-color: #000000;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   padding: 2rem;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .app.dark-mode .app-header {
-  background-color: #1e1e1e;
+  background: linear-gradient(135deg, #343a40, #495057);
 }
 
 .header-top {
@@ -107,12 +107,14 @@ isDarkMode.value = false;
   margin: 0;
   font-size: 2.5rem;
   color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .app-header p {
   margin: 0.5rem 0 1.5rem;
   font-size: 1.2rem;
-  color: #cccccc;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .app-nav {
@@ -141,12 +143,12 @@ isDarkMode.value = false;
 
 .nav-btn.active {
   background-color: #ffffff;
-  color: #000000;
+  color: var(--primary-color);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .app.dark-mode .nav-btn.active {
-  background-color: #333333;
+  background-color: var(--primary-color);
   color: #ffffff;
 }
 
@@ -163,16 +165,16 @@ isDarkMode.value = false;
 }
 
 .app-footer {
-  background-color: #000000;
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
   padding: 1rem;
   text-align: center;
   color: #ffffff;
   margin-top: 2rem;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .app.dark-mode .app-footer {
-  background-color: #1e1e1e;
+  background: linear-gradient(135deg, #495057, #343a40);
 }
 
 @media (max-width: 768px) {

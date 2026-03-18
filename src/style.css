@@ -6,12 +6,13 @@
 }
 
 :root {
-  /* 黑白配色方案 */
-  --primary-color: #000000;
-  --secondary-color: #ffffff;
-  --text-color: #000000;
-  --text-light: #333333;
-  --bg-color: #ffffff;
+  /* 温馨情侣配色方案 */
+  --primary-color: #ff6b6b;
+  --secondary-color: #4ecdc4;
+  --accent-color: #ffe66d;
+  --text-color: #292f36;
+  --text-light: #6c757d;
+  --bg-color: #f9f7f7;
   --card-bg: #ffffff;
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
@@ -33,12 +34,13 @@
 
 /* 深色模式 */
 .dark-mode {
-  --primary-color: #ffffff;
-  --secondary-color: #1e1e1e;
-  --text-color: #ffffff;
-  --text-light: #cccccc;
-  --bg-color: #121212;
-  --card-bg: #1e1e1e;
+  --primary-color: #ff6b6b;
+  --secondary-color: #4ecdc4;
+  --accent-color: #ffe66d;
+  --text-color: #f8f9fa;
+  --text-light: #adb5bd;
+  --bg-color: #292f36;
+  --card-bg: #343a40;
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 
   color: var(--text-color);
