@@ -5,42 +5,20 @@ import { ref } from 'vue';
 const records = ref([
   {
     id: 1,
-    date: '2026-03-12',
-    title: '春日赏花',
-    content: '今天和朋友一起去公园赏花，看到了美丽的樱花和郁金香，心情非常愉快。我们在公园里漫步，欣赏着各种盛开的花朵，还拍了很多照片。中午在公园附近的咖啡馆休息，聊了很多有趣的话题。这真是一个美好的春日午后。',
-    image: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&q=80&w=800&h=600',
+    date: '2026-01-05',
+    title: '相识',
+    content: `
+    一月五号呢，我俩加了微信（抱着试一试的态度）， 同意之后发了一些算是自己的个人介绍吧，当然她也把名字发了过来， 她叫李雪， 乍一听就知道是个 「美女」，当然这是后面才知道的，毕竟貌美如花， 我们说了好多话， 讲了好多故事， 分享了不少事情， 有每天早起的打招呼，也有晚上临别进安全区的互相鼓励， 从五号到今天收录了一些她优秀的品质， 【精通算账， 品行端正， 为人低调， 沉默是金（这个是我对腼腆的评价）】， 虽然她说我30岁， 但是我依旧保留我未过28岁的27年龄， 我再加一些吧， 幽默风趣， 脾气好， 这些又会带来温柔似水， 体贴入微， 叶子落入我平静的湖面， 泛起涟漪， 希望这片叶子， 慢慢漂浮， 不追不赶， 希望飘到彼岸的时候， 被捡起来， 依旧可以看清楚上面写的一行字：如果说彩虹是七种颜色构成的， 那么你一定是五彩嫔纷汇聚的， 好看的颜色， 才能构成好看的你
+
+慢慢漂流吧， 将好看进行到底
+    `,
+    image: new URL('../assets/xiangyu.png', import.meta.url).toString(),
     images: [
-      'https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&q=80&w=800&h=600',
-      'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=800&h=600'
+      new URL('../assets/xiangyu.png', import.meta.url).toString(),
     ],
-    location: '中央公园',
-    weather: '晴朗'
+    location: '河南&上海',
+    weather: '晴☀️'
   },
-  {
-    id: 2,
-    date: '2026-03-10',
-    title: '学习新技能',
-    content: '开始学习摄影，买了一台新相机，希望能记录更多美好的瞬间。今天第一次尝试拍摄风景照片，虽然还有很多不懂的地方，但是感觉很有趣。我会继续努力学习，提高自己的摄影技巧。',
-    image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=800&h=600',
-    images: [
-      'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=800&h=600'
-    ],
-    location: '家中',
-    weather: '多云'
-  },
-  {
-    id: 3,
-    date: '2026-03-05',
-    title: '周末聚餐',
-    content: '和家人一起在家做了一顿丰盛的晚餐，大家都很开心。我们准备了很多美食，有红烧肉、清蒸鱼、炒青菜等。饭后大家一起聊天，度过了一个温馨的周末夜晚。',
-    image: 'https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=800&h=600',
-    images: [
-      'https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=800&h=600',
-      'https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&q=80&w=800&h=600'
-    ],
-    location: '家中',
-    weather: '小雨'
-  }
 ]);
 
 // 弹窗状态
@@ -124,10 +102,27 @@ const closeModal = () => {
 
 .timeline-title {
   font-size: 1.8rem;
-  color: var(--primary-color);
+  color: var(--accent-color);
   margin-bottom: 2rem;
   text-align: center;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.timeline-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: var(--metal-gradient);
+  border-radius: 2px;
 }
 
 .app.dark-mode .timeline-title {
@@ -145,28 +140,47 @@ const closeModal = () => {
   left: 15px;
   top: 0;
   bottom: 0;
-  width: 2px;
-  background-color: var(--secondary-color);
+  width: 3px;
+  background: var(--metal-gradient);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .app.dark-mode .timeline-list::before {
-  background-color: var(--primary-color);
+  background: var(--metal-gradient);
 }
 
 .timeline-item {
   position: relative;
   margin-bottom: 2rem;
-  border: 1px solid var(--secondary-color);
-  border-radius: 8px;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
   padding: 1.5rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-color: var(--card-bg);
   cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--metal-gradient);
 }
 
 .app.dark-mode .timeline-item {
-  border-color: var(--primary-color);
+  border-color: var(--border-color);
   background-color: var(--card-bg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.app.dark-mode .timeline-item::before {
+  background: var(--metal-gradient);
 }
 
 .timeline-item:hover {
@@ -178,7 +192,7 @@ const closeModal = () => {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.timeline-item::before {
+.timeline-item::after {
   content: '';
   position: absolute;
   left: -35px;
@@ -186,34 +200,38 @@ const closeModal = () => {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: var(--primary-color);
-  border: 4px solid var(--card-bg);
+  background: var(--metal-gradient);
+  border: 3px solid var(--border-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   z-index: 1;
 }
 
-.app.dark-mode .timeline-item::before {
-  background-color: var(--primary-color);
-  border: 4px solid var(--card-bg);
+.app.dark-mode .timeline-item::after {
+  background: var(--metal-gradient);
+  border: 3px solid var(--border-color);
 }
 
 .timeline-date {
   position: absolute;
   right: 1.5rem;
   top: -12px;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: var(--metal-gradient);
   color: #ffffff;
   padding: 0.3rem 0.8rem;
-  border-radius: 12px;
+  border-radius: 4px;
   font-size: 0.9rem;
   font-weight: bold;
   white-space: nowrap;
   z-index: 2;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-family: 'Courier New', Courier, monospace;
+  border: 1px solid var(--border-color);
 }
 
 .app.dark-mode .timeline-date {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: var(--metal-gradient);
   color: #ffffff;
+  border: 1px solid var(--border-color);
 }
 
 .timeline-content {
@@ -222,13 +240,19 @@ const closeModal = () => {
 
 .timeline-item-title {
   font-size: 1.3rem;
-  color: var(--primary-color);
+  color: var(--accent-color);
   margin-top: 0;
   margin-bottom: 0.5rem;
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
 }
 
 .app.dark-mode .timeline-item-title {
   color: var(--primary-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .timeline-item-text {
@@ -239,6 +263,7 @@ const closeModal = () => {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .app.dark-mode .timeline-item-text {
@@ -258,11 +283,14 @@ const closeModal = () => {
 }
 
 .timeline-item-more {
-  color: var(--primary-color);
+  color: var(--accent-color);
   font-size: 0.9rem;
   font-weight: 500;
   margin-top: 1rem;
   text-align: right;
+  font-family: 'Courier New', Courier, monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* 弹窗样式 */
@@ -282,18 +310,20 @@ const closeModal = () => {
 
 .modal-content {
   background-color: var(--card-bg);
-  border-radius: 12px;
+  border-radius: 4px;
   max-width: 800px;
   width: 100%;
   max-height: 80vh;
   overflow-y: auto;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   animation: modalFadeIn 0.3s ease;
+  border: 2px solid var(--border-color);
 }
 
 .app.dark-mode .modal-content {
   background-color: var(--card-bg);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--border-color);
 }
 
 .modal-header {
@@ -301,28 +331,49 @@ const closeModal = () => {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 2rem;
-  border-bottom: 1px solid var(--secondary-color);
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-bottom: 3px solid var(--border-color);
+  background: var(--metal-gradient);
   color: #ffffff;
-  border-radius: 12px 12px 0 0;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.modal-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    linear-gradient(45deg, transparent 49%, rgba(255,255,255,0.1) 50%, transparent 51%),
+    linear-gradient(-45deg, transparent 49%, rgba(255,255,255,0.1) 50%, transparent 51%);
+  background-size: 20px 20px;
+  opacity: 0.3;
 }
 
 .app.dark-mode .modal-header {
-  border-bottom: 1px solid var(--primary-color);
-  background: linear-gradient(135deg, #343a40, #495057);
+  border-bottom: 3px solid var(--border-color);
+  background: var(--metal-gradient);
 }
 
 .modal-title {
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
 }
 
 .modal-close {
-  background: none;
-  border: none;
-  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 1.5rem;
   color: #ffffff;
   cursor: pointer;
   padding: 0;
@@ -331,12 +382,16 @@ const closeModal = () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-family: 'Courier New', Courier, monospace;
+  position: relative;
+  z-index: 1;
 }
 
 .modal-close:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: rotate(90deg);
 }
 
 .modal-body {
@@ -350,11 +405,22 @@ const closeModal = () => {
   font-size: 0.9rem;
   color: var(--text-light);
   flex-wrap: wrap;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  border-radius: 4px;
+  border-left: 4px solid var(--accent-color);
+}
+
+.app.dark-mode .modal-meta {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid var(--primary-color);
 }
 
 .modal-date {
   font-weight: 500;
-  color: var(--primary-color);
+  color: var(--accent-color);
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .modal-text {
@@ -363,10 +429,17 @@ const closeModal = () => {
   margin-bottom: 2rem;
   color: var(--text-color);
   white-space: pre-wrap;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 1.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
 }
 
 .app.dark-mode .modal-text {
   color: var(--text-color);
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
 }
 
 .modal-gallery {
@@ -406,14 +479,22 @@ const closeModal = () => {
 
 .modal-button {
   padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 25px;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  background: var(--metal-gradient);
   color: #ffffff;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-family: 'Courier New', Courier, monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.modal-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .modal-button:hover {

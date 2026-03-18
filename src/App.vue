@@ -70,15 +70,17 @@ isDarkMode.value = false;
 }
 
 .app-header {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: var(--metal-gradient);
   padding: 2rem;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: background 0.3s ease;
+  border-bottom: 3px solid var(--border-color);
 }
 
 .app.dark-mode .app-header {
-  background: linear-gradient(135deg, #343a40, #495057);
+  background: var(--metal-gradient);
+  border-bottom: 3px solid var(--border-color);
 }
 
 .header-top {
@@ -107,14 +109,22 @@ isDarkMode.value = false;
   margin: 0;
   font-size: 2.5rem;
   color: #ffffff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
 }
 
 .app-header p {
   margin: 0.5rem 0 1.5rem;
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.9);
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  font-family: 'Courier New', Courier, monospace;
+  position: relative;
+  z-index: 1;
 }
 
 .app-nav {
@@ -126,30 +136,36 @@ isDarkMode.value = false;
 
 .nav-btn {
   padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 25px;
-  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.1);
   color: #ffffff;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .nav-btn:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .nav-btn.active {
   background-color: #ffffff;
   color: var(--primary-color);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--border-color);
 }
 
 .app.dark-mode .nav-btn.active {
   background-color: var(--primary-color);
   color: #ffffff;
+  border: 2px solid var(--border-color);
 }
 
 .app-main {
@@ -158,23 +174,28 @@ isDarkMode.value = false;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
 }
 
 .app.dark-mode .app-main {
-  background-color: #121212;
+  background-color: var(--bg-color);
 }
 
 .app-footer {
-  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  background: var(--metal-gradient);
   padding: 1rem;
   text-align: center;
   color: #ffffff;
   margin-top: 2rem;
   transition: background 0.3s ease;
+  border-top: 3px solid var(--border-color);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .app.dark-mode .app-footer {
-  background: linear-gradient(135deg, #495057, #343a40);
+  background: var(--metal-gradient);
+  border-top: 3px solid var(--border-color);
 }
 
 @media (max-width: 768px) {
